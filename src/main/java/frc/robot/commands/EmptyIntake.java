@@ -10,13 +10,16 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Conveyor;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Shooter;
 
 public class EmptyIntake extends CommandBase {
   private final Conveyor conveyor;
   private final Intake intake;
-  public EmptyIntake(Conveyor subsystem, Intake subsystem2) {
+  private final Shooter shooter;
+  public EmptyIntake(Conveyor subsystem, Intake subsystem2, Shooter subsystem3) {
     conveyor = subsystem;
     intake = subsystem2;
+    shooter = subsystem3;
     addRequirements(conveyor, intake);
   }
 
@@ -31,6 +34,7 @@ public class EmptyIntake extends CommandBase {
     intake.lowerIntake();
     intake.setIntakeMotors(-0.5);
     conveyor.conveyorFeed(-0.25);
+    shooter.setMotorSpeed(-.2);
     
   }
 

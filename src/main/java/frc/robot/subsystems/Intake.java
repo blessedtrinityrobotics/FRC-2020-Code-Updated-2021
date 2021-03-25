@@ -60,7 +60,7 @@ public class Intake extends SubsystemBase {
     }
   
     public void startIntake(){
-      setIntakeMotors(1.00);
+      setIntakeMotors(2);
       //intakeDown();
     }
 

@@ -137,7 +137,7 @@ public class RobotContainer {
     leftBumperButtonOperator.whileHeld(new SpinIntake(intake));
     rightBumperButtonOperator.whenPressed(new SortConveyor(conveyor));
     bButtonOperator.whenPressed(new IntakeUp(intake)); // Intake up and stop intake procedure
-    aButtonOperator.whileHeld(new EmptyIntake(conveyor, intake));
+    aButtonOperator.whileHeld(new EmptyIntake(conveyor, intake, shooter));
     xButtonOperator.whileHeld(new ConveyorFeed(conveyor)); // Feed conveyor to shoot
     yButtonOperator.whileHeld(new Shoot(shooter)); // Shoot balls when robot is on white line
     leftStickButtonOperator.whileHeld(new ConveyorReverse(conveyor));
